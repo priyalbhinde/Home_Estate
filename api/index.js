@@ -31,9 +31,9 @@ app.use('/public', express.static(path.join(__dirname, './public')))
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
-app.use(express.static(path.join(__dirname, '../estate')));
+app.use(express.static(path.join(__dirname, '../estate/dist')));
 app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../estate','index.html'))
+    res.sendFile(path.join(__dirname,'../estate/dist','index.html'))
 })
 
 app.use((err, req, res, next) => {
